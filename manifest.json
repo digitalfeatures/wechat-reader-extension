@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "WechatReader",
+  "description": "wechat-reader, it can better assist you in reading!",
+  "version": "0.0.1",
+  "permissions": ["clipboardWrite"],
+  "icons": {
+    "128": "asserts/icon/icon.png"
+  },
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/reader.js"],
+      "matches": ["https://weread.qq.com/web/reader/*"]
+    },
+    {
+      "js": ["scripts/shelf.js"],
+      "matches": ["https://weread.qq.com/web/shelf"]
+    }
+  ]
+}
